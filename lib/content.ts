@@ -1,10 +1,86 @@
-export type Project = {slug:string;number:string;title:string;category:string;label:string;year:string;image:string;theme:string;};
-export const projects:Project[]=[
- {slug:"forma",number:"01",title:"Forma Objects",category:"E-commerce · Art direction",label:"FORM / FUNCTION",year:"2025",image:"https://images.unsplash.com/photo-1490312278390-ab64016e0aa9?auto=format&fit=crop&w=1400&q=85",theme:"project-lilac"},
- {slug:"northstar",number:"02",title:"Northstar Finance",category:"Fintech · Product design",label:"CLARITY IN MOTION",year:"2025",image:"https://images.unsplash.com/photo-1460925895917-afda827c52f7?auto=format&fit=crop&w=1400&q=85",theme:"project-blue"},
- {slug:"still",number:"03",title:"Still / Studio",category:"Brand platform · Development",label:"LESS, BUT BETTER",year:"2024",image:"https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?auto=format&fit=crop&w=1400&q=85",theme:"project-sand"},
- {slug:"orbit",number:"04",title:"Orbit Digital",category:"Web experience · Motion",label:"A NEW PERSPECTIVE",year:"2024",image:"https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?auto=format&fit=crop&w=1400&q=85",theme:"project-purple"}
+
+
+export type Project = {
+  slug: string;
+  number: string;
+  title: string;
+  category: string;
+  label: string;
+  year: string;
+  image: string;
+  theme: string;
+  url: string;
+};
+
+export const projects: Project[] = [
+  {
+    slug: "forma",
+    number: "01",
+    title: "Volt Store",
+    category: "E-commerce · Store",
+    label: "Ecommerce / Store",
+    year: "2025",
+    image: "/assets/ecom.png",
+    theme: "project-lilac",
+    url: "https://testecommerce-final.vercel.app/",
+  },
+  {
+    slug: "northstar",
+    number: "02",
+    title: "Northstar Finance",
+    category: "Fintech · Product design",
+    label: "CLARITY IN MOTION",
+    year: "2025",
+    image: "/assets/mortgage.png",
+    theme: "project-blue",
+    url: "https://mortgage-three-beta.vercel.app/",
+  },
+  {
+    slug: "still",
+    number: "03",
+    title: "ThepreferredMortgage",
+    category: "Mortgage · Development",
+    label: "LESS, BUT BETTER",
+    year: "2024",
+    image: "/assets/home.png",
+    theme: "project-sand",
+    url: "https://estate-ashy-eight.vercel.app/",
+  },
+  {
+    slug: "orbit",
+    number: "04",
+    title: "Velora Auto Rental",
+    category: "Web experience · Motion",
+    label: "A NEW PERSPECTIVE",
+    year: "2024",
+    image: "/assets/car.png",
+    theme: "project-purple",
+    url: "https://carrental-iota-ten.vercel.app/ ",
+  },
+  {
+    slug: "hospitality",
+    number: "05",
+    title: "Velora",
+    category: "Hospitality · Web development",
+    label: "A BETTER WAY TO STAY",
+    year: "2025",
+    image: "/assets/hotels.png",
+    theme: "project-sand",
+    url: "https://hotel-mu-rosy.vercel.app/",
+  },
+  {
+    slug: "ecocycle",
+    number: "06",
+    title: "Greenloop",
+    category: "Sustainability · Development",
+    label: "DESIGNED FOR TOMORROW",
+    year: "2025",
+    image: "/assets/waste.png",
+    theme: "project-blue",
+    url: "https://wastedisposal-iota.vercel.app/",
+  },
 ];
+
 export type Post={slug:string;title:string;category:string;date:string;readTime:string;excerpt:string;image:string;body:string[];};
 export const posts:Post[]=[
  {slug:"designing-for-the-next-web",title:"Designing for the next version of the web",category:"Perspective",date:"Oct 14, 2025",readTime:"5 min read",excerpt:"The most memorable websites do more than look good. They create a feeling, then make the next step obvious.",image:"https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&w=1400&q=85",body:["The web keeps changing, but the fundamentals of a useful digital experience remain surprisingly stable: clarity, speed, accessibility and a strong sense of purpose. New tools should make those fundamentals stronger, not distract from them.","Motion and 3D can give an interface a sense of depth. Used carefully, they guide attention, explain relationships and create moments worth remembering. Used everywhere, they compete with the content and make a site harder to use.","Start with the message and the user's goal. Build a clear hierarchy, test it on real devices, and add motion only when it improves understanding. The next version of the web will belong to experiences that balance ambition with restraint."]},
