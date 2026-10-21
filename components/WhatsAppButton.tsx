@@ -1,0 +1,3 @@
+ "use client";
+import { MessageCircle } from "lucide-react";
+export function WhatsAppButton(){const number=process.env.NEXT_PUBLIC_WHATSAPP_NUMBER||"2348012345678";const message=encodeURIComponent("Hello DREVANET! I'd like to discuss a project.");return <a className="whatsapp-float" href={`https://wa.me/${number}?text=${message}`} target="_blank" rel="noreferrer" aria-label="Chat with DREVANET on WhatsApp"><MessageCircle size={23}/><span>Let’s chat</span></a>}
