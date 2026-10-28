@@ -79,6 +79,17 @@ export const projects: Project[] = [
     theme: "project-blue",
     url: "https://wastedisposal-iota.vercel.app/",
   },
+   {
+    slug: "Sports",
+    number: "07",
+    title: "Betisports",
+    category: "Sports . Streaming",
+    label: "BEST IN FOOTBALL",
+    year: "2022",
+    image: "/assets/betisports.png",
+    theme: "project-sports",
+    url: "https://betisports.com/",
+  },
 ];
 
 export type Post={slug:string;title:string;category:string;date:string;readTime:string;excerpt:string;image:string;body:string[];};
