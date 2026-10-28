@@ -1,12 +1,17 @@
-import Image from "next/image";
+
 import {
   ArrowDownRight,
+  ArrowRight,
   ArrowUpRight,
   Code2,
   Layers3,
+  Smartphone,
+  Monitor,
+  Palette,
   ShoppingBag,
   Sparkles,
-  WandSparkles,
+  Zap,
+  CheckCircle2,
 } from "lucide-react";
 import Link from "next/link";
 import { Reveal } from "@/components/Reveal";
@@ -14,6 +19,52 @@ import { ProjectCard } from "@/components/ProjectCard";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { projects, posts } from "@/lib/content";
 import { TechStack } from "@/components/TechStack";
+
+const services = [
+  {
+    number: "01",
+    icon: Monitor,
+    title: "Web Development",
+    description:
+      "High-performance websites, business platforms, dashboards and web applications engineered to help your business grow.",
+    tags: ["Next.js", "React", "Performance"],
+    href: "/services",
+  },
+  {
+    number: "02",
+    icon: Palette,
+    title: "Web Design & UI/UX",
+    description:
+      "Distinctive website designs, intuitive user journeys and thoughtful interfaces that turn visitors into customers.",
+    tags: ["UI/UX", "Responsive design", "Prototyping"],
+    href: "/services",
+  },
+  {
+    number: "03",
+    icon: Smartphone,
+    title: "App Design",
+    description:
+      "User-friendly mobile and digital product experiences, from early concepts and wireframes to polished interactive prototypes.",
+    tags: ["Mobile UI", "Product design", "Design systems"],
+    href: "/services",
+  },
+  {
+    number: "04",
+    icon: ShoppingBag,
+    title: "E-commerce Solutions",
+    description:
+      "Modern online stores with smooth shopping experiences, clear product presentation and conversion-focused design.",
+    tags: ["Online stores", "Checkout UX", "Integrations"],
+    href: "/services",
+  },
+];
+
+const benefits = [
+  "Responsive across mobile, tablet and desktop",
+  "Performance-minded development",
+  "User-focused design decisions",
+  "Scalable, maintainable solutions",
+];
 
 export default function HomePage() {
   return (
@@ -24,26 +75,28 @@ export default function HomePage() {
           <div className="hero-copy">
             <Reveal>
               <span className="eyebrow">
-                <span className="status-dot" /> INDEPENDENT DIGITAL AGENCY
-                <span className="hero-eyebrow-divider">/</span> STRATEGY · DESIGN ·
-                CODE
+                <span className="status-dot" />
+                DREVANET DIGITAL STUDIO
+                <span className="hero-eyebrow-divider">/</span>
+                DESIGN · DEVELOPMENT · DIGITAL PRODUCTS
               </span>
             </Reveal>
 
             <Reveal delay={0.08}>
               <h1>
-                We make the
+                We design.
                 <br />
-                <span className="gradient-text">digital</span> feel
+                We build.
                 <br />
-                extraordinary<span className="accent">.</span>
+                <span className="gradient-text">You grow.</span>
               </h1>
             </Reveal>
 
             <Reveal delay={0.16}>
               <p className="hero-lede">
-                We design and build ambitious digital experiences for brands
-                ready to move forward.
+                We create modern websites, powerful web applications and
+                intuitive app designs that help ambitious businesses stand out
+                and move forward.
               </p>
             </Reveal>
 
@@ -52,6 +105,7 @@ export default function HomePage() {
                 <Link className="button button-primary" href="/contact">
                   Start a project <ArrowUpRight size={17} />
                 </Link>
+
                 <Link className="text-link" href="/portfolio">
                   Explore our work <ArrowDownRight size={17} />
                 </Link>
@@ -64,24 +118,27 @@ export default function HomePage() {
                 <span>R</span>
                 <span>V</span>
               </div>
+
               <p>
-                <strong>Small team. Big ideas.</strong>
+                <strong>From concept to launch.</strong>
                 <br />
-                Built around your next big move.
+                Digital solutions built around your goals.
               </p>
+
               <span className="hero-proof-badge">
-                <Sparkles size={13} /> MADE WITH INTENTION
+                <Sparkles size={13} /> BUILT WITH PURPOSE
               </span>
             </div>
           </div>
 
+          {/* DIGITAL PRODUCT VISUAL */}
           <Reveal className="hero-art-wrap" delay={0.12}>
             <div className="hero-orbit orbit-one" />
             <div className="hero-orbit orbit-two" />
 
             <div className="hero-art">
               <div className="glass-card glass-card-back">
-                <span>CREATIVE</span>
+                <span>WEB DEVELOPMENT</span>
                 <b>01</b>
               </div>
 
@@ -91,16 +148,17 @@ export default function HomePage() {
               </div>
 
               <div className="glass-card glass-card-front">
-                <span>DEVELOPMENT</span>
+                <span>PRODUCT DESIGN</span>
                 <b>↗</b>
               </div>
 
               <div className="floating-chip chip-top">
-                <Sparkles size={15} /> MADE TO MATTER
+                <Code2 size={15} /> DESIGN MEETS CODE
               </div>
 
               <div className="floating-chip chip-bottom">
-                <span className="status-dot" /> AVAILABLE FOR SELECT PROJECTS
+                <span className="status-dot" />
+                WE BUILD FOR THE WEB
               </div>
             </div>
           </Reveal>
@@ -108,39 +166,39 @@ export default function HomePage() {
           <div className="hero-bottom">
             <span>SCROLL TO EXPLORE</span>
             <span className="scroll-line" />
-            <span>DESIGN · TECHNOLOGY · MOTION</span>
+            <span>WEBSITES · WEB APPS · APP DESIGN</span>
           </div>
         </section>
 
-        {/* METRICS */}
+        {/* CAPABILITIES */}
         <section
           className="hero-metrics section-wrap"
-          aria-label="DREVANET at a glance"
+          aria-label="Our digital capabilities"
         >
           <div className="metric-intro">
-            <span className="eyebrow">SMALL STUDIO. BIG ENERGY.</span>
+            <span className="eyebrow">DIGITAL, DONE THOUGHTFULLY</span>
             <p>
-              We turn complex ideas into clear, confident digital experiences.
+              We combine creative thinking with reliable technology to turn
+              business ideas into useful digital experiences.
             </p>
           </div>
 
           <div className="metric-item">
-            <strong>
-              01<span>—</span>
-            </strong>
-            <span>Curious by nature</span>
+            <Code2 size={25} strokeWidth={1.5} />
+            <strong>Web</strong>
+            <span>Development</span>
           </div>
 
           <div className="metric-item">
-            <strong>∞</strong>
-            <span>Ideas in motion</span>
+            <Palette size={25} strokeWidth={1.5} />
+            <strong>Web</strong>
+            <span>Design & UX</span>
           </div>
 
           <div className="metric-item">
-            <strong>
-              24<span>/7</span>
-            </strong>
-            <span>Built for the web</span>
+            <Smartphone size={25} strokeWidth={1.5} />
+            <strong>App</strong>
+            <span>Design</span>
           </div>
         </section>
 
@@ -148,14 +206,17 @@ export default function HomePage() {
         <section className="marquee-band">
           <div className="marquee-track">
             <span>
-              DESIGN WITH INTENT ✳ BUILD WITH PURPOSE ✳ MAKE AN IMPACT ✳&nbsp;
+              DESIGN WITH PURPOSE ✳ DEVELOP WITH PRECISION ✳ BUILD FOR PEOPLE ✳
+              &nbsp;
             </span>
             <span>
-              DESIGN WITH INTENT ✳ BUILD WITH PURPOSE ✳ MAKE AN IMPACT ✳&nbsp;
+              DESIGN WITH PURPOSE ✳ DEVELOP WITH PRECISION ✳ BUILD FOR PEOPLE ✳
+              &nbsp;
             </span>
           </div>
         </section>
 
+        {/* TECHNOLOGY STACK */}
         <TechStack />
 
         {/* SERVICES */}
@@ -163,78 +224,162 @@ export default function HomePage() {
           <Reveal>
             <div className="section-heading">
               <div>
-                <span className="eyebrow">WHAT WE DO</span>
+                <span className="eyebrow">WHAT WE DO BEST</span>
                 <h2>
-                  Digital craft.
+                  Digital solutions.
                   <br />
-                  <span className="muted">Real-world impact.</span>
+                  <span className="muted">Designed around you.</span>
                 </h2>
               </div>
 
               <p>
-                From the first sketch to the final launch, we bring strategy,
-                design and technology together to create work that works.
+                Whether you need a new website, a web application or an app
+                interface, we bring design and engineering together to create
+                a digital product with a clear purpose.
               </p>
             </div>
           </Reveal>
 
           <div className="services-grid">
+            {services.map((service, index) => {
+              const Icon = service.icon;
+
+              return (
+                <Reveal key={service.number} delay={index * 0.07}>
+                  <article className="service-card">
+                    <div className="service-top">
+                      <span>{service.number}</span>
+                      <Icon size={24} strokeWidth={1.5} />
+                    </div>
+
+                    <h3>{service.title}</h3>
+                    <p>{service.description}</p>
+
+                    <div className="service-tags">
+                      {service.tags.map((tag) => (
+                        <span key={tag}>{tag}</span>
+                      ))}
+                    </div>
+
+                    <Link
+                      href={service.href}
+                      aria-label={`Explore ${service.title}`}
+                    >
+                      <ArrowUpRight size={18} />
+                    </Link>
+                  </article>
+                </Reveal>
+              );
+            })}
+          </div>
+        </section>
+
+        {/* OUR PROCESS */}
+        <section className="section-wrap section-pad">
+          <Reveal>
+            <div className="section-heading">
+              <div>
+                <span className="eyebrow">HOW WE WORK</span>
+                <h2>
+                  Clear thinking.
+                  <br />
+                  <span className="muted">Quality execution.</span>
+                </h2>
+              </div>
+
+              <p>
+                A practical, collaborative process that takes your idea from
+                the first conversation to a polished digital experience.
+              </p>
+            </div>
+          </Reveal>
+
+          <div className="services-grid process-grid">
             {[
               {
                 n: "01",
-                icon: Code2,
-                title: "Web development",
-                text: "Fast, accessible, scalable websites and web applications built for people and performance.",
+                title: "Discover",
+                text: "We understand your business, audience, goals and the problem your digital product needs to solve.",
               },
               {
                 n: "02",
-                icon: WandSparkles,
-                title: "UI/UX & product design",
-                text: "Thoughtful digital journeys, intuitive interfaces and design systems with a clear point of view.",
+                title: "Design",
+                text: "We shape the structure, user journeys and visual direction before moving into development.",
               },
               {
                 n: "03",
-                icon: ShoppingBag,
-                title: "E-commerce",
-                text: "Beautiful storefronts and frictionless shopping experiences designed to turn interest into action.",
+                title: "Develop",
+                text: "We turn approved designs into responsive, functional websites and digital experiences.",
               },
               {
                 n: "04",
-                icon: Layers3,
-                title: "Motion & 3D",
-                text: "Dimensional visuals and purposeful motion that make digital experiences feel alive.",
+                title: "Launch",
+                text: "We test, refine and prepare your project for launch, with room for future improvements.",
               },
-            ].map((service, i) => (
-              <Reveal key={service.n} delay={i * 0.07}>
+            ].map((step, index) => (
+              <Reveal key={step.n} delay={index * 0.07}>
                 <article className="service-card">
                   <div className="service-top">
-                    <span>{service.n}</span>
-                    <service.icon size={23} strokeWidth={1.5} />
+                    <span>{step.n}</span>
+                    <CheckCircle2 size={22} strokeWidth={1.5} />
                   </div>
-
-                  <h3>{service.title}</h3>
-                  <p>{service.text}</p>
-
-                  <Link
-                    href="/services"
-                    aria-label={`Explore ${service.title}`}
-                  >
-                    <ArrowUpRight size={18} />
-                  </Link>
+                  <h3>{step.title}</h3>
+                  <p>{step.text}</p>
                 </article>
               </Reveal>
             ))}
           </div>
         </section>
 
-        {/* SELECTED WORK */}
+        {/* WHY DREVANET */}
+        <section className="about-strip">
+          <div className="section-wrap about-strip-inner">
+            <Reveal>
+              <div>
+                <span className="eyebrow">WHY WORK WITH US</span>
+                <h2>
+                  More than good looks.
+                  <br />
+                  <span className="muted">
+                    Digital products that work.
+                  </span>
+                </h2>
+              </div>
+            </Reveal>
+
+            <Reveal delay={0.12}>
+              <p>
+                Great digital work needs more than attractive visuals. We
+                focus on usability, performance, responsive layouts and
+                technology that supports your long-term goals.
+              </p>
+
+              <ul className="benefits-list">
+                {benefits.map((benefit) => (
+                  <li key={benefit}>
+                    <CheckCircle2 size={17} />
+                    {benefit}
+                  </li>
+                ))}
+              </ul>
+
+              <Link href="/about" className="button button-outline">
+                Meet DREVANET <ArrowUpRight size={17} />
+              </Link>
+            </Reveal>
+          </div>
+        </section>
+
+        {/* SELECTED PROJECTS */}
         <section className="section-wrap section-pad work-section">
           <Reveal>
             <div className="section-heading">
               <div>
-                <span className="eyebrow">SELECTED WORK</span>
+                <span className="eyebrow">SELECTED PROJECTS</span>
                 <h2>
-                  Ideas, <span className="gradient-text">made real.</span>
+                  Ideas into
+                  <br />
+                  <span className="gradient-text">digital experiences.</span>
                 </h2>
               </div>
 
@@ -245,53 +390,26 @@ export default function HomePage() {
           </Reveal>
 
           <div className="projects-grid">
-            {projects.slice(0, 4).map((project, i) => (
+            {projects.slice(0, 4).map((project, index) => (
               <ProjectCard
                 key={project.slug}
                 project={project}
-                index={i}
+                index={index}
               />
             ))}
           </div>
         </section>
 
-        {/* ABOUT */}
-        <section className="about-strip">
-          <div className="section-wrap about-strip-inner">
-            <Reveal>
-              <div>
-                <span className="eyebrow">THE DREVANET APPROACH</span>
-                <h2>
-                  Good work looks good.
-                  <br />
-                  <span className="muted">
-                    Great work moves you forward.
-                  </span>
-                </h2>
-              </div>
-            </Reveal>
-
-            <Reveal delay={0.12}>
-              <p>
-                We combine clear thinking, brave creativity and dependable
-                engineering to build digital things with a reason to exist.
-              </p>
-
-              <Link href="/about" className="button button-outline">
-                Get to know us <ArrowUpRight size={17} />
-              </Link>
-            </Reveal>
-          </div>
-        </section>
-
-        {/* BLOG PREVIEW */}
+        {/* BLOG */}
         <section className="section-wrap section-pad blog-preview">
           <Reveal>
             <div className="section-heading">
               <div>
-                <span className="eyebrow">NOTES &amp; IDEAS</span>
+                <span className="eyebrow">IDEAS & INSIGHTS</span>
                 <h2>
-                  From the <span className="muted">studio.</span>
+                  Thinking about
+                  <br />
+                  <span className="muted">what comes next.</span>
                 </h2>
               </div>
 
@@ -302,21 +420,13 @@ export default function HomePage() {
           </Reveal>
 
           <div className="blog-grid">
-            {posts.slice(0, 3).map((post, i) => (
-              <Reveal key={post.slug} delay={i * 0.07}>
+            {posts.slice(0, 3).map((post, index) => (
+              <Reveal key={post.slug} delay={index * 0.07}>
                 <Link
                   href={`/blog/${post.slug}`}
                   className="blog-card"
                 >
                   <div className="blog-image">
-                    <Image
-                      src={post.image}
-                      alt={post.title}
-                      fill
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                      className="blog-image-media"
-                    />
-
                     <span>{post.category}</span>
                     <ArrowUpRight size={20} />
                   </div>
@@ -333,26 +443,30 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* CALL TO ACTION */}
+        {/* CTA */}
         <section className="cta-section section-wrap">
           <Reveal>
             <div className="cta-card">
               <div className="cta-glow" />
-              <span className="eyebrow">HAVE A GOOD ONE IN MIND?</span>
+
+              <span className="eyebrow">
+                HAVE A WEBSITE OR APP IDEA?
+              </span>
 
               <h2>
-                Let’s make
+                Let’s build
                 <br />
-                something <span className="gradient-text">matter.</span>
+                something <span className="gradient-text">useful.</span>
               </h2>
 
               <p>
-                Tell us what you’re imagining. We’ll help you figure out what
-                comes next.
+                Tell us about your website, web application or app design
+                project. Let’s turn your idea into a digital experience built
+                around your goals.
               </p>
 
               <Link className="button button-light" href="/contact">
-                Let’s talk <ArrowUpRight size={17} />
+                Discuss your project <ArrowRight size={17} />
               </Link>
 
               <span className="cta-mark">D.</span>
